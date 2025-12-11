@@ -260,10 +260,13 @@ class Model:
                 num_workers=args.num_workers
             )
         
-        data_loader_val = DataLoader(dataset_val, args.batch_size, sampler=sampler_val,
+        val_batch_size = args.val_test_batch_size
+        data_loader_val = DataLoader(dataset_val, val_batch_size, sampler=sampler_val,
                                     drop_last=False, collate_fn=utils.collate_fn, 
                                     num_workers=args.num_workers)
-        data_loader_test = DataLoader(dataset_test, args.batch_size, sampler=sampler_test,
+        
+        test_batch_size = args.val_test_batch_size
+        data_loader_test = DataLoader(dataset_test, test_batch_size, sampler=sampler_test,
                                     drop_last=False, collate_fn=utils.collate_fn, 
                                     num_workers=args.num_workers)
 

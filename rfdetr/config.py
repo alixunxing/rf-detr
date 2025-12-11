@@ -124,6 +124,7 @@ class TrainConfig(BaseModel):
     lr: float = 1e-4
     lr_encoder: float = 1.5e-4
     batch_size: int = 4
+    val_test_batch_size: int = 8
     grad_accum_steps: int = 4
     epochs: int = 100
     ema_decay: float = 0.993
